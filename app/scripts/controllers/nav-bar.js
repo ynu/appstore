@@ -9,7 +9,7 @@
  */
 angular.module('appstoreApp')
   .controller('NavBarCtrl', function ($scope, $q, $rootScope) {
-      $scope.version = '1.1.0';
+      $scope.version = '1.2.0';
       var meDtd = $q.defer();
       Nagu.MM.getMe().done(function (me) {
           if (me.ret == 0) meDtd.resolve(me);

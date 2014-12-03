@@ -48,3 +48,10 @@
   float: left;
   margin: 4px 5px 0 0;
 }
+
+
+.app-title {
+    font-size:15px;
+    font-weight:bold;
+    font-family:'Helvetica Neue,Microsoft Yahei,Hiragino Sans GB,WenQuanYi Micro Hei,sans-serif'
+}

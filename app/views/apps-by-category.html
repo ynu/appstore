@@ -13,52 +13,37 @@
 <div class="row">
     <div class="col-sm-9">
 
-        
+        <div class="panel panel-primary" ng-repeat="category in categories track by $index" data-conceptid="{{category.ConceptId}}">
+            <div class="panel-body">
 
+                <h5>
+                    <i class="fa fa-leaf"></i>
+                    <strong>{{category.FriendlyNames[0]}}</strong>
+                </h5>
+            </div>
+            <div class="panel-footer">
+                <div class="row">
+                    <div class="media"></div>
 
-        <div class="widget-container-col ui-sortable" ng-repeat="category in categories track by $index" data-conceptid="{{category.ConceptId}}">
-            <!-- #section:custom/widget-box -->
-            <div class="widget-box ui-sortable-handle" style="opacity: 1; z-index: 0;">
-                <div class="widget-header">
-                    <h5 class="widget-title"> <strong>{{category.FriendlyNames[0]}}</strong> </h5>
-
-                    <!-- #section:custom/widget-box.toolbar -->
-                    <div class="widget-toolbar">
-                        <a data-target="#" data-action="collapse">
-                            <i class="ace-icon fa fa-chevron-up"></i>
+                    <div class="media col-lg-4" ng-repeat="app in category.apps track by $index">
+                        <a class="pull-left" href="{{app.Url}}" target="_blank">
+                            <img ng-if="app.ImgUrl" class="media-object" ng-src="{{app.ImgUrl}}" width="72px" height="72px">
+                            <img ng-if="app.ImgUrl === undefined" ng-src="http://www.network.ynu.edu.cn/images/appicons/icon_072.png" />
                         </a>
-                    </div>
 
-                    <!-- /section:custom/widget-box.toolbar -->
-                </div>
-
-                <div class="widget-body">
-                    <div class="widget-main">
-                        <div class="row">
-                            <div class="text-center" ng-if="category.apps === undefined">正在加载...</div>
-                            <div class="media"></div>
-
-                            <div class="media col-lg-4" ng-repeat="app in category.apps track by $index">
-                                <a class="pull-left" href="{{app.Url}}" target="_blank">
-                                    <img ng-if="app.ImgUrl" class="media-object" ng-src="{{app.ImgUrl}}" width="72px" height="72px">
-                                    <img ng-if="app.ImgUrl === undefined" ng-src="http://www.network.ynu.edu.cn/images/appicons/icon_072.png" />
-                                </a>
-
-                                <div class="media-body">
-                                    <h4 class="media-heading bolder">
-                                        <a href="{{app.Url}}" target="_blank"> {{app.Name}} </a>
-                                    </h4>
-                                    {{app.Desc}}
-                                    <div>归属单位：<span class=" bolder">{{depts[app.Dept].Name}}</span></div>
-                                </div>
-                            </div>
-
+                        <div class="media-body">
+                            <h4 class="media-heading bolder">
+                                <a href="{{app.Url}}" class="app-title" target="_blank"> {{app.Name}} </a>
+                            </h4>
+                            {{app.Desc}}
+                            <div>归属单位：<span class=" bolder">{{depts[app.Dept].Name}}</span></div>
                         </div>
                     </div>
+
                 </div>
             </div>
-            <!-- /section:custom/widget-box -->
         </div>
+
     </div>
     <div class="col-sm-3">
         <div class="panel panel-primary">
