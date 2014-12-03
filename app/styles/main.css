@@ -1,0 +1,50 @@
+.nagu-loading-mask {
+              z-index: 9998;
+              position: fixed;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background: #000;
+              opacity: 0.4;
+              filter: alpha(opacity=40);
+          }
+
+          .nagu-loading {
+              z-index: 9999;
+              position: fixed;
+              top: 50%;
+              left: 50%;
+          }
+
+
+                    /* Marketing section of Overview
+-------------------------------------------------- */
+.marketing .row {
+  margin-bottom: 9px;
+}
+.marketing h1 {
+  margin: 36px 0 27px;
+  font-size: 40px;
+  font-weight: 300;
+  text-align: center;
+}
+.marketing h2,
+.marketing h3 {
+  font-weight: 300;
+}
+.marketing h2 {
+  font-size: 22px;
+}
+.marketing p {
+  margin-right: 10px;
+}
+.marketing .bs-icon {
+  float: left;
+  margin: 7px 10px 0 0;
+  opacity: .8;
+}
+.marketing .small-bs-icon {
+  float: left;
+  margin: 4px 5px 0 0;
+}
